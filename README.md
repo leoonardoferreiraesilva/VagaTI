@@ -4,7 +4,7 @@
 Bem-vindo(a) ao **Vagas de TI**, um projeto criado para **compartilhar vagas de estágio e empregos na área de Tecnologia da Informação**. Aqui, você encontrará as melhores oportunidades para impulsionar sua carreira, seja você um estudante buscando o primeiro estágio ou um profissional em busca do próximo grande desafio!
 
 ### 📌 Sobre o Projeto  
-O **Vagas de TI** foi idealizado para **centralizar e organizar informações sobre oportunidades no mercado de tecnologia**. Sabemos que encontrar a vaga certa nem sempre é fácil, então estamos aqui para ajudar a **conectar talentos com empresas incríveis!**
+O **Vagas de TI** foi idealizado para **centralizar e organizar informações sobre oportunidades no mercado de tecnologia**. Eu sei que encontrar a vaga certa nem sempre é fácil, então estou aqui para ajudar a **conectar talentos com empresas incríveis!**
 
 ### 🎯 Objetivos:
 - Divulgar **vagas de estágio e emprego** na área de TI.
