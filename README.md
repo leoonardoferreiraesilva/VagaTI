@@ -7,12 +7,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
   <style>
     /* Estilos gerais */
-    body {
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
       background-color: black;
       color: white;
       font-family: 'Pixelify Sans', sans-serif;
-      margin: 0;
-      padding: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -31,7 +33,7 @@
 
     .header p {
       font-size: 5vw; /* Texto de contato adaptável */
-      margin: 10px 0; /* Espaçamento responsivo */
+      margin: 10px 0;
     }
 
     .header a {
@@ -43,59 +45,51 @@
     .input-container {
       display: flex;
       flex-direction: column;
-      gap: 10px; /* Espaçamento responsivo */
-      width: 90%; /* Largura adaptável */
-      max-width: 600px; /* Limite máximo para não ocupar telas muito grandes */
+      gap: 10px;
+      width: 90%;
+      max-width: 600px;
     }
 
     /* Estilos para as caixas de texto (textarea e input) */
     .input-container textarea,
     .input-container input {
-      width: 100%; /* Adapta à largura do container */
-      height: 80px; /* Altura fixa */
+      width: 100%;
+      height: 80px;
       background-color: transparent;
       border: 2px solid yellow;
-      border-radius: 10px; /* Borda arredondada */
+      border-radius: 10px;
       color: white;
-      font-size: 1rem; /* Tamanho de fonte relativo */
+      font-size: 1rem;
       padding: 10px;
       box-sizing: border-box;
-      resize: none; /* Impede redimensionamento manual */
+      resize: none;
     }
 
     /* Estilos adaptáveis para diferentes telas */
-    @media (max-width: 1920px) {
-      body {
-        background-color: black; /* Garante o fundo preto em telas menores */
-      }
-
+    @media (max-width: 768px) {
       .header h1 {
         font-size: 15vw; /* Fonte ainda maior em telas menores */
       }
 
       .header p {
-        font-size: 6vw; /* Ajuste proporcional para telas médias */
+        font-size: 6vw;
       }
 
       .input-container textarea,
       .input-container input {
-        height: 60px; /* Reduz a altura em telas menores */
+        height: 60px;
       }
     }
 
     @media (max-width: 480px) {
-      body {
-        background-color: black; /* Fundo reforçado para telas pequenas */
-      }
-
       .header p {
-        font-size: 4.5vw; /* Reduz ainda mais o texto de contato */
+        font-size: 4.5vw;
       }
 
       .input-container textarea,
       .input-container input {
         height: 50px;
-        font-size: 0.9rem; /* Ajuste de fonte em dispositivos muito pequenos */
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -112,11 +106,9 @@
   </div>
 
   <div class="input-container">
-    <!-- Caixa de texto 1 (textarea) para múltiplas linhas -->
     <textarea placeholder="Estagiário(a) Front-end ✨🚀
     Publicada em 15 de maio de 2024 https://tinyurl.com/29kmr7lz"></textarea>
 
-    <!-- As demais caixas de texto -->
     <input type="text" placeholder="Caixa de texto 2">
     <input type="text" placeholder="Caixa de texto 3">
     <input type="text" placeholder="Caixa de texto 4">
