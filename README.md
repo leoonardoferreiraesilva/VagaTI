@@ -64,7 +64,7 @@
     }
 
     /* Estilos adaptáveis para diferentes telas */
-    @media (max-width: 768px) {
+    @media (max-width: 1920px) {
       body {
         background-color: black; /* Garante o fundo preto em telas menores */
       }
