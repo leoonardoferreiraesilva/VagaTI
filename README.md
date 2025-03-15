@@ -14,7 +14,6 @@ O **Vagas de TI** foi idealizado para **centralizar e organizar informações so
 ### 🛠️ Tecnologias Utilizadas:
 Este projeto utiliza ferramentas e tecnologias modernas para manter a organização e acessibilidade, como:  
 - **HTML/CSS** para estrutura e estilo do site.  
-- **JavaScript** para funcionalidades dinâmicas.  
 - Integrações com APIs de encurtamento de links para links organizados e clicáveis.
 
 ### 🌟 Por que este projeto é importante?
