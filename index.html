@@ -31,7 +31,7 @@
     
     .header p {
       font-size: 80px;
-      margin: 5px 0 20px; /* 5px de espaço entre o título e o texto de contato */
+      margin: 5px 0 20px;
     }
     
     .header a {
@@ -43,25 +43,25 @@
     .input-container {
       display: flex;
       flex-direction: column;
-      gap: 5px; /* 5px de espaçamento entre as caixas */
+      gap: 5px;
     }
     
     /* Estilos para as caixas de texto (textarea e input) */
     .input-container textarea,
     .input-container input {
-      width: 1500px;           /* Ajuste de largura conforme desejado */
-      height: 100px;           /* Ajuste de altura conforme desejado */
+      width: 1500px;
+      height: 100px;
       background-color: transparent;
       border: 2px solid yellow;
-      border-radius: 10px;      /* Borda arredondada */
+      border-radius: 10px;
       color: white;
       font-size: 22px;
       padding: 5px;
       box-sizing: border-box;
-      resize: none;           /* Impede redimensionamento manual */
+      resize: none;
     }
-    
-    /* (Opcional) Estilo para links gerados automaticamente */
+
+    /* Estilo para os links criados automaticamente */
     a.auto-generated {
       color: yellow;
       text-decoration: underline;
@@ -81,34 +81,37 @@
   
   <div class="input-container">
     <!-- Caixa de texto 1 (textarea) para múltiplas linhas -->
-    <textarea placeholder="Estagiário(a) Front-end ✨🚀
+    <textarea class="auto-link" placeholder="Estagiário(a) Front-end ✨🚀
     Publicada em 15 de maio de 2024 https://tinyurl.com/29kmr7lz"></textarea>
     
     <!-- As demais caixas, utilizando input para linha única -->
-    <input type="text" placeholder="Caixa de testo2"></textarea>
-    <input type="text" placeholder="Caixa de texto 3"></textarea>
-    <input type="text" placeholder="Caixa de texto 4"></textarea>
-    <input type="text" placeholder="Caixa de texto 5"></textarea>
+    <input class="auto-link" type="text" placeholder="Caixa de texto 2 com https://example.com">
+    <input class="auto-link" type="text" placeholder="Caixa de texto 3">
+    <input class="auto-link" type="text" placeholder="Caixa de texto 4">
+    <input class="auto-link" type="text" placeholder="Caixa de texto 5">
   </div>
     
   <!-- Script para converter URLs em links clicáveis -->
   <script>
     function linkify(text) {
-      // Expressão regular para encontrar URLs que começam com http://, https:// ou ftp://
-      var urlPattern = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+      // Expressão regular para encontrar URLs
+      const urlPattern = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi;
       return text.replace(urlPattern, function(match) {
         return '<a class="auto-generated" href="' + match + '" target="_blank">' + match + '</a>';
       });
     }
-    
-    // Aplica a função linkify aos elementos com a classe "auto-link"
+
+    // Converte texto em links clicáveis automaticamente
     document.addEventListener('DOMContentLoaded', function() {
-      var elements = document.getElementsByClassName('auto-link');
-      for (var i = 0; i < elements.length; i++) {
-        var el = elements[i];
-        // Converte o texto interno (innerText) em HTML com links clicáveis.
-        el.innerHTML = linkify(el.innerText);
-      }
+      const inputs = document.querySelectorAll('.auto-link');
+      inputs.forEach((input) => {
+        input.addEventListener('blur', function () {
+          const value = input.value;
+          if (value) {
+            input.outerHTML = linkify(value);
+          }
+        });
+      });
     });
   </script>
 </body>
