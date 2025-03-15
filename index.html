@@ -25,12 +25,12 @@
     }
     
     .header h1 {
-      font-size: 128px;
+      font-size: 128px; /* Unidade fixa para impedir alteração ao dar zoom */
       margin: 0;
     }
     
     .header p {
-      font-size: 80px;
+      font-size: 80px; /* Unidade fixa para subtítulo */
       margin: 5px 0 20px;
     }
     
@@ -85,7 +85,7 @@
     Publicada em 15 de maio de 2024 https://tinyurl.com/29kmr7lz"></textarea>
     
     <!-- As demais caixas, utilizando input para linha única -->
-    <input class="auto-link" type="text" placeholder="Caixa de texto 2 com https://example.com">
+    <input class="auto-link" type="text" placeholder="Caixa de texto 2">
     <input class="auto-link" type="text" placeholder="Caixa de texto 3">
     <input class="auto-link" type="text" placeholder="Caixa de texto 4">
     <input class="auto-link" type="text" placeholder="Caixa de texto 5">
