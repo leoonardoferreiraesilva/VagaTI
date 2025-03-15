@@ -7,90 +7,64 @@
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
   <style>
     /* Estilos gerais */
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
+    body {
       background-color: black;
       color: white;
       font-family: 'Pixelify Sans', sans-serif;
+      margin: 0;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-
+    
     /* Seção superior: Título e Contato */
     .header {
       text-align: center;
       margin-bottom: 20px;
     }
-
+    
     .header h1 {
-      font-size: 10vw; /* Fonte adaptável ao tamanho da largura da tela */
+      font-size: 128px;
       margin: 0;
     }
-
+    
     .header p {
-      font-size: 5vw; /* Texto de contato adaptável */
-      margin: 10px 0;
+      font-size: 80px;
+      margin: 5px 0 20px; /* 5px de espaço entre o título e o texto de contato */
     }
-
+    
     .header a {
       color: yellow;
       text-decoration: none;
     }
-
+    
     /* Container para as caixas de texto */
     .input-container {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      width: 90%;
-      max-width: 600px;
+      gap: 5px; /* 5px de espaçamento entre as caixas */
     }
-
+    
     /* Estilos para as caixas de texto (textarea e input) */
     .input-container textarea,
     .input-container input {
-      width: 100%;
-      height: 80px;
+      width: 1500px;           /* Ajuste de largura conforme desejado */
+      height: 100px;           /* Ajuste de altura conforme desejado */
       background-color: transparent;
       border: 2px solid yellow;
-      border-radius: 10px;
+      border-radius: 10px;      /* Borda arredondada */
       color: white;
-      font-size: 1rem;
-      padding: 10px;
+      font-size: 22px;
+      padding: 5px;
       box-sizing: border-box;
-      resize: none;
+      resize: none;           /* Impede redimensionamento manual */
     }
-
-    /* Estilos adaptáveis para diferentes telas */
-    @media (max-width: 768px) {
-      .header h1 {
-        font-size: 15vw; /* Fonte ainda maior em telas menores */
-      }
-
-      .header p {
-        font-size: 6vw;
-      }
-
-      .input-container textarea,
-      .input-container input {
-        height: 60px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .header p {
-        font-size: 4.5vw;
-      }
-
-      .input-container textarea,
-      .input-container input {
-        height: 50px;
-        font-size: 0.9rem;
-      }
+    
+    /* (Opcional) Estilo para links gerados automaticamente */
+    a.auto-generated {
+      color: yellow;
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -104,15 +78,38 @@
       </a>
     </p>
   </div>
-
+  
   <div class="input-container">
+    <!-- Caixa de texto 1 (textarea) para múltiplas linhas -->
     <textarea placeholder="Estagiário(a) Front-end ✨🚀
     Publicada em 15 de maio de 2024 https://tinyurl.com/29kmr7lz"></textarea>
-
-    <input type="text" placeholder="Caixa de texto 2">
-    <input type="text" placeholder="Caixa de texto 3">
-    <input type="text" placeholder="Caixa de texto 4">
-    <input type="text" placeholder="Caixa de texto 5">
+    
+    <!-- As demais caixas, utilizando input para linha única -->
+    <input type="text" placeholder="Caixa de testo2"></textarea>
+    <input type="text" placeholder="Caixa de texto 3"></textarea>
+    <input type="text" placeholder="Caixa de texto 4"></textarea>
+    <input type="text" placeholder="Caixa de texto 5"></textarea>
   </div>
+    
+  <!-- Script para converter URLs em links clicáveis -->
+  <script>
+    function linkify(text) {
+      // Expressão regular para encontrar URLs que começam com http://, https:// ou ftp://
+      var urlPattern = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+      return text.replace(urlPattern, function(match) {
+        return '<a class="auto-generated" href="' + match + '" target="_blank">' + match + '</a>';
+      });
+    }
+    
+    // Aplica a função linkify aos elementos com a classe "auto-link"
+    document.addEventListener('DOMContentLoaded', function() {
+      var elements = document.getElementsByClassName('auto-link');
+      for (var i = 0; i < elements.length; i++) {
+        var el = elements[i];
+        // Converte o texto interno (innerText) em HTML com links clicáveis.
+        el.innerHTML = linkify(el.innerText);
+      }
+    });
+  </script>
 </body>
 </html>
