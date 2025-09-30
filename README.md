@@ -26,6 +26,3 @@ Se você quer adicionar novas vagas, sugerir melhorias ou contribuir com ideias,
 
 🚀 **Vamos juntos transformar carreiras e mudar vidas!**
 
----
-
-Se precisar personalizar ainda mais, é só me dizer! 💡
